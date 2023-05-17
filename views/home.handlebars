@@ -1,0 +1,7 @@
+<h1>Homepage!</h1>
+{{#each allProjects}}
+    <h3>{{name}} by {{user.name}}</h3>
+    <p>{{description}}</p>
+    <p>amount needed: ${{needed_funding}}</p>
+    <hr>
+{{/each}}
