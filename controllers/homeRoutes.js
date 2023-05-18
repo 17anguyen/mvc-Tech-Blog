@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
         const hbsData = postData.map((post) => post.get({ plain: true }));
         console.log(hbsData);
         res.render("homepage", {
+            pagetitle: "The Tech Blog",
             allPosts: hbsData,
             logged_in: req.session.logged_in,
         });
@@ -31,6 +32,7 @@ router.get("/login", (req, res) => {
         return res.redirect("/profile");
     }
     res.render("login", {
+        pagetitle: "The Tech Blog",
         logged_in: req.session.logged_in,
     });
 });
@@ -40,6 +42,7 @@ router.get("/signup", (req, res) => {
         return res.redirect("/profile");
     }
     res.render("signup", {
+        pagetitle: "The Tech Blog",
         logged_in: req.session.logged_in,
     });
 });
@@ -57,7 +60,9 @@ router.get('/logout', (req, res) => {
 
 router.get("/profile", (req, res) => {
     try {
-        res.render("profile")
+        res.render("profile", {
+            pagetitle: "Your Dashboard",
+        })
     } catch (error) {
         console.log(error)
         res.status(500).json(error)
