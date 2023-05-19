@@ -50,7 +50,7 @@ router.get("/signup", (req, res) => {
 router.get('/logout', (req, res) => {
     console.log("loggin out!!")
     try {
-        res.render("logout")
+        res.redirect("login")
         req.session.destroy()
     } catch (error) {
         console.log(error)
