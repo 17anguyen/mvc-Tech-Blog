@@ -71,15 +71,28 @@ router.get('/logout', (req, res) => {
 
 router.get("/profile", (req, res) => {
     try {
-        res.render("profile", {
-            pagetitle: "Your Dashboard",
+        Post.findAll({
+            where: {
+                user_id: req.session.user_id
+            }
+        }).then((userPost) => {
+            const hbsData = userPost.map((post => post.get({
+                plain: true
+
+
+            })));
+            res.render("profile", {
+                pagetitle: "Your Dashboard",
+                posts: hbsData,
+                username: req.session.username,
+            })
         })
+
     } catch (error) {
         console.log(error)
         res.status(500).json(error)
     }
 });
-
 
 // if (!req.session.logged_in) {
 //     return res.redirect("/login");

@@ -18,7 +18,13 @@ Post.init(
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
+      defaultValue: Date.now(),
+      get() {
+
+        const dateFormat = new Date(this.getDataValue('date_created')).toLocaleString();
+
+        return dateFormat;
+      }
     },
     body: {
       type: DataTypes.STRING,
