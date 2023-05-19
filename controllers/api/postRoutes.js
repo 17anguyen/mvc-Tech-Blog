@@ -3,7 +3,7 @@ const { Post } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-    const postData = await postData.findAll()
+    const postData = await Post.findAll()
     res.status(200).json(postData)
   } catch (err) {
     console.log(err)

@@ -1,5 +1,5 @@
 //signup form
-document.querySelector("form").addEventListener("submit", e => {
+document.querySelector("#new-post").addEventListener("submit", e => {
     e.preventDefault();
     const postObj = {
         title: document.querySelector("#post-title").value,
