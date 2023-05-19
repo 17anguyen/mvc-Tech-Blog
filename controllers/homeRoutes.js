@@ -27,6 +27,17 @@ router.get("/post/:id", (req, res) => {
     });
 });
 
+router.get("/create", (req, res) => {
+    try {
+        res.render("createpost", {
+            pagetitle: "Your Dashboard",
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(500).json(error)
+    }
+});
+
 router.get("/login", (req, res) => {
     if (req.session.logged_in) {
         return res.redirect("/profile");
