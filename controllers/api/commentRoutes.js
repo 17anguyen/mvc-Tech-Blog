@@ -3,17 +3,30 @@ const { Comment } = require('../../models');
 
 router.post('/', async (req, res) => {
     try {
+        // console.log(req)
         const newComment = await Comment.create({
             ...req.body,
             user_id: req.session.user_id,
-            post_id: req.body.post_id
+            // post_id: req.body.post_id
         });
 
         res.status(200).json(newComment);
     } catch (err) {
+        console.log(err);
         res.status(400).json(err);
     }
 });
+
+router.get('/', async (req, res) => {
+    try {
+        const commentData = await Comment.findAll()
+        res.status(200).json(commentData)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err)
+    }
+})
+
 
 router.delete('/:id', async (req, res) => {
     try {

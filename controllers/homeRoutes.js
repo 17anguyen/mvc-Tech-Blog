@@ -3,18 +3,24 @@ const router = express.Router();
 const { Post, User } = require("../models");
 
 router.get("/", (req, res) => {
-    Post.findAll({
-        include: [User],
-    }).then((postData) => {
-        const hbsData = postData.map((post) => post.get({ plain: true }));
-        console.log(hbsData);
-        res.render("homepage", {
-            pagetitle: "The Tech Blog",
-            allPosts: hbsData,
-            logged_in: req.session.logged_in,
-        });
-    });
+    try {
+        Post.findAll({
+            include: [User],
+        }).then((postData) => {
+            const hbsData = postData.map((post) => post.get({ plain: true }));
+            console.log(hbsData);
+            res.render("homepage", {
+                pagetitle: "The Tech Blog",
+                allPosts: hbsData,
+                logged_in: req.session.logged_in,
+            });
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(500).json(error)
+    }
 });
+
 
 router.get("/post/:id", (req, res) => {
     Post.findByPk(req.params.id, {

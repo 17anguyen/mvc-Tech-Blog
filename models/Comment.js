@@ -30,10 +30,18 @@ Comment.init(
                 key: "id"
             }
         },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }
+        // username: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // },
+        // created_at: {
+        //     type: DataTypes.DATE,
+        //     defaultValue: Date.now(),
+        //     get() {
+        //         const timestamp = new Date(this.getDataValue("created_at")).toLocaleDateString()
+        //         return timestamp
+        //     }
+        // }
     },
     {
         sequelize,
