@@ -1,7 +1,8 @@
 # 14 Model-View-Controller (MVC): Tech Blog
 # MVC Tech Blog
-    
-
+  deployed link https://techblog-mvc-blog.herokuapp.com/
+  github link https://github.com/17anguyen/mvc-Tech-Blog  
+image.png
 ## Table of Contents
 - [License](#license)  
 - [Description](#description)  
