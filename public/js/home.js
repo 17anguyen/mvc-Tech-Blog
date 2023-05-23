@@ -28,23 +28,23 @@ commentBtns.forEach((commentBtn, i) => {
         console.log(e.target.getAttribute("data-id"))
         console.log(textArea[i].value)
 
-        fetch("/api/comments", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                post_id: e.target.getAttribute("data-id"),
-                body: textArea[i].value,
-                // user_id: req.session.user_id,
+        // fetch("/api/comments", {
+        //     method: "POST",
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify({
+        //         post_id: e.target.getAttribute("data-id"),
+        //         body: textArea[i].value,
+        //         // user_id: req.session.user_id,
 
-            })
+        //     })
 
-        }).then(res => {
-            if (res.ok) {
-                location.reload()
-            } else {
-                alert("womp womp")
-            }
-        })
+        // }).then(res => {
+        //     if (res.ok) {
+        //         location.reload()
+        //     } else {
+        //         alert("womp womp")
+        //     }
+        // })
     })
 })
 

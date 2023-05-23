@@ -13,6 +13,7 @@ router.get("/", (req, res) => {
                 pagetitle: "The Tech Blog",
                 allPosts: hbsData,
                 logged_in: req.session.logged_in,
+                // comments: hbsdata,
             });
         })
     } catch (error) {
@@ -24,6 +25,16 @@ router.get("/", (req, res) => {
 
 router.get("/post/:id", (req, res) => {
     Post.findByPk(req.params.id, {
+        include: [User],
+    }).then((projData) => {
+        const hbsData = projData.get({ plain: true });
+        hbsData.logged_id = req.session.logged_id;
+        console.log(hbsData);
+        res.render("singlePost", hbsData);
+    });
+});
+router.get("/comment/:id", (req, res) => {
+    Comment.findByPk(req.params.id, {
         include: [User],
     }).then((projData) => {
         const hbsData = projData.get({ plain: true });
