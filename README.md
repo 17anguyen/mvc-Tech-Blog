@@ -2,7 +2,7 @@
 # MVC Tech Blog
   deployed link https://techblog-mvc-blog.herokuapp.com/
   github link https://github.com/17anguyen/mvc-Tech-Blog  
-image.png
+![image](https://github.com/17anguyen/mvc-Tech-Blog/assets/43556891/828dc0ce-6636-4b46-a219-fc8373d11fa9)
 ## Table of Contents
 - [License](#license)  
 - [Description](#description)  
