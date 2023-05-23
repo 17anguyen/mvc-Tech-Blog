@@ -1,5 +1,25 @@
 # 14 Model-View-Controller (MVC): Tech Blog
+# MVC Tech Blog
+    
 
+## Table of Contents
+- [License](#license)  
+- [Description](#description)  
+- [Installation](#installation)
+- [Usage](#usage)
+- [Questions](#questions)
+
+
+## Description
+    This is a blog page to display aquired MVC knowledge. The ability to view your posts on the dashboard and make posts. On the home you can view all users posts and add comments
+
+## Installation
+
+## Usage
+
+## Questions
+You can find my contact information on my GitHub or email me at  if you have any questions!
+https://github.com/17anguyen
 ## Your Task
 
 Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept covered in this course returns thousands of think pieces and tutorials from developers of all skill levels!
