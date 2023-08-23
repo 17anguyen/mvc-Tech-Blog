@@ -1,5 +1,4 @@
 # Model-View-Controller (MVC): Tech Blog
-# MVC Tech Blog
 ![image](https://github.com/17anguyen/mvc-Tech-Blog/assets/43556891/828dc0ce-6636-4b46-a219-fc8373d11fa9)
   deployed link https://techblog-mvc-blog.herokuapp.com/
   github link https://github.com/17anguyen/mvc-Tech-Blog  
